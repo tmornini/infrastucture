@@ -1,4 +1,10 @@
+# -*- encoding : utf-8 -*-
+
+$LOAD_PATH.unshift '.'
+
 require 'rake'
+
+require 'spec/_helpers'
 
 argv = ARGV.select do |argument|
   case argument

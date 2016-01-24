@@ -50,15 +50,7 @@ Style/SingleLineMethods:
   Enabled: false
 
 Style/SpaceAroundOperators:
-  MultiSpaceAllowedForOperators:
-    - '='
-    - '=>'
-    - '||'
-    - '||='
-    - '+='
-    - 'and'
-    - '+'
-    - '&&'
+  AllowForAlignment: true
 
 Style/SpaceInsideBrackets:
   Enabled: false

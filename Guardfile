@@ -62,12 +62,12 @@ module ::Guard
     end
 
     def spec_pathname_for pathname
-      return pathname if pathname.match /[.]spec$/
+      return pathname if pathname =~ /[.]spec$/
       spec_prefix_for(pathname) + '.spec'
     end
 
     def not_applicable? pathname
-      pathname.match /spec_helper/
+      pathname =~ /spec_helper/
     end
 
     def handle pathname
@@ -89,7 +89,7 @@ module ::Guard
     end
 
     def handle_integration_spec_for pathname
-      return unless pathname.match /^spec/
+      return unless pathname =~ /^spec/
 
       system 'bundle exec rake spec:integration ' \
              "TEST=#{spec_pathname_for pathname}"
