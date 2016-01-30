@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # not used in production
 gem 'awesome_print'
+gem 'benchmark-ips'
 gem 'guard'
 gem 'guard-minitest'
 gem 'guard-rubocop'
