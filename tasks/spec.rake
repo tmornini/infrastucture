@@ -2,6 +2,8 @@
 
 require 'rake/testtask'
 
+require './spec/_helpers'
+
 namespace :spec do
   Rake::TestTask.new :unit do |task|
     task.loader     = 'file://spec/loader'
