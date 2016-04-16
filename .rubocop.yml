@@ -46,6 +46,9 @@ Style/MethodDefParentheses:
 Style/PredicateName:
   Enabled: false
 
+Style/SignalException:
+  EnforcedStyle: semantic
+
 Style/SingleLineMethods:
   Enabled: false
 
