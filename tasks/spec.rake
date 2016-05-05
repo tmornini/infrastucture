@@ -7,6 +7,6 @@ require './spec/_helpers'
 namespace :spec do
   Rake::TestTask.new :unit do |task|
     task.loader     = 'file://spec/loader'
-    task.test_files = FileList['lib/**/*.spec']
+    task.test_files = FileList['**/*.spec']
   end
 end

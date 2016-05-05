@@ -57,7 +57,7 @@ module ::Guard
     def spec_prefix_for pathname
       pathname
         .match(
-          %r{^(lib/(.+/)?[^/]+)[.](rb|spec)$}
+          %r{^((.+/)?[^/]+)[.](rb|spec)$}
         )[1]
     end
 
@@ -108,5 +108,5 @@ guard :subledger do
     nil
   end
 
-  watch %r{(lib|spec)/(.+)[.](rb|spec)$}
+  watch /^(.+)[.](rb|spec)$/
 end
