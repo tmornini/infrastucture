@@ -2,12 +2,12 @@
 
 namespace :lint do
   task :all do
-    sh 'bundle exec rubocop --fail-fast --display-cop-names'
+    sh 'bundle exec rubocop --display-cop-names --auto-correct'
   end
 
   desc 'lint a single file: TEST=pathname'
   task :file do
-    sh "bundle exec rubocop --display-cop-names #{ENV['TEST']}"
+    sh "bundle exec rubocop --display-cop-names --auto-correct #{ENV['TEST']}"
   end
 
   task :ci do
