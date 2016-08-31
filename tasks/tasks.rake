@@ -4,20 +4,11 @@
 task default: :test
 
 desc 'run specs and lint'
-task :test do
-  begin
-    # rubocop:disable all
-    task('spec:unit').invoke
-    task('lint').invoke
-  rescue Exception => e
-    raise e
-    # rubocop:enable all
-  end
-end
+task test: ['spec:unit', 'lint:all']
 
 desc 'start guard'
 task :guard do
-  sh 'bundle exec guard'
+  exec 'bundle exec guard'
 end
 
 desc 'lint code'

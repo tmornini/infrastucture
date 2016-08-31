@@ -1,27 +1,15 @@
 # -*- encoding : utf-8 -*-
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift '.'
+ARGV.replace(
+  ARGV.select do |argument|
+    case argument
+    when /^-/ then
+      argument
+    else
+      load File.expand_path argument
 
-require 'rake'
-
-require 'spec/_helpers'
-
-argv = ARGV.select do |argument|
-  case argument
-  when /^-/ then
-    argument
-  when /\*/ then
-    FileList[argument].to_a.each do |file|
-      load File.expand_path file
+      false
     end
-
-    false
-  else
-    load File.expand_path argument
-
-    false
   end
-end
-
-ARGV.replace argv
+)
